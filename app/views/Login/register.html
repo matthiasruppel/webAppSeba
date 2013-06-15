@@ -19,7 +19,7 @@
     
       #{field 'user.lastName'}
         <p class="${field.errorClass}">
-            <strong>lastName:</strong> <input type="text" name="${field.name}" size="16" value="${user?.lastName}"> *
+            <strong>Last Name:</strong> <input type="text" name="${field.name}" size="16" value="${user?.lastName}"> *
             <span class="error">${field.error}</span>
         </p>
     #{/field}
@@ -33,7 +33,7 @@
     #{/field}
     #{field 'verifyPassword'}
         <p class="${field.errorClass}">
-            <strong>Verify password:</strong> <input type="password" name="${field.name}" size="16" value="${verifyPassword}"> *
+            <strong>Reenter password:</strong> <input type="password" name="${field.name}" size="16" value="${verifyPassword}"> *
             <span class="error">${field.error}</span>
         </p>
     #{/field}    

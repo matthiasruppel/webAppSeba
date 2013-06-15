@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import org.hibernate.loader.custom.Return;
 
 import models.User;
@@ -57,6 +59,7 @@ public class Login extends Controller {
 	        }
 	        user.create();
 	        session.put("user", user.mail);
+            response.setCookie("FriendsBoutiqueCookie", user.mail, "30d");
 	        flash.success("Welcome, " + user.firstName);
 	       
 	        Account.index();
@@ -67,10 +70,14 @@ public class Login extends Controller {
 	 		if (Http.Request.current().cookies.get("FriendsBoutiqueCookie") != null){
 	 			String mail = Http.Request.current().cookies.get("FriendsBoutiqueCookie").value;
 	 			user = User.find("byMail", mail).first();
-	 			session.put("user", user.mail);
-	 			flash.success("Welcome, " + user.firstName);
-	 			Account.index(); 
-	 			return true;
+	 	    	List<User> users = User.findAll();
+	 	    	if (users.contains(user)){
+	 	    		session.put("user", mail);
+		 			flash.success("Welcome, " + user.firstName);
+		 			Account.index(); 
+		 			return true;
+	 	    	}
+	 	    	else return false;
 	 		}
 	 		return false;
 	 	}
@@ -101,4 +108,23 @@ public class Login extends Controller {
 	        response.removeCookie("FriendsBoutiqueCookie");
 	        index();
 	    }
+	    
+	    public static void settings(){
+	    	renderTemplate("Login/settings.html");	    	
+	    }
+	    
+	    public static void saveSettings(String password, String verifyPassword) {
+	        User connected = connected();
+	        connected.password = password;
+	        validation.valid(connected);
+	        validation.required(verifyPassword);
+	        validation.equals(verifyPassword, password).message("Your password doesn't match");
+	        if(validation.hasErrors()) {
+	            render("@settings", connected, verifyPassword);
+	        }
+	        connected.save();
+	        flash.success("Password updated");
+	        Account.index();
+	    }
+	    
 }
