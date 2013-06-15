@@ -10,6 +10,8 @@ import play.mvc.results.Result;
 
 public class Login extends Controller {
 	
+	static User user;
+	
 	@Before
     static void addUser() {
         User user = connected();
@@ -35,6 +37,11 @@ public class Login extends Controller {
         	index();
   
         }
+        
+        if(loggedIn()){
+        	
+        }
+        
         render();
     }
 	
@@ -56,6 +63,17 @@ public class Login extends Controller {
 	        
 	    }
 	    
+	 	public static boolean loggedIn(){
+	 		if (Http.Request.current().cookies.get("FriendsBoutiqueCookie") != null){
+	 			String mail = Http.Request.current().cookies.get("FriendsBoutiqueCookie").value;
+	 			user = User.find("byMail", mail).first();
+	 			session.put("user", user.mail);
+	 			flash.success("Welcome, " + user.firstName);
+	 			Account.index(); 
+	 			return true;
+	 		}
+	 		return false;
+	 	}
 
 	    public static void login(String mail, String password) {
 	    	
@@ -77,11 +95,10 @@ public class Login extends Controller {
 	        index();
 	    }
 	    
-	    	
-	    
 	    
 	    public static void logout() {
 	        session.clear();
+	        response.removeCookie("FriendsBoutiqueCookie");
 	        index();
 	    }
 }
