@@ -10,6 +10,7 @@ import models.*;
 public class Account extends Controller {
 
     public static void index() {
+    	
         render();
     }
 

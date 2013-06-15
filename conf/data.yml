@@ -1,9 +1,9 @@
 # Users
     
 models.User(demo):
-    mail: demo
+    mail: demo@mytum.de
     password: demo
-    firstName: Demo 
-    lastName: Demo
+    firstName: Simon
+    lastName: Ecker
 
  

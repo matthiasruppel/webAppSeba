@@ -14,15 +14,15 @@
     <body>
         
         <div id="header">
-            <h1>play framework booking demo</h1>
-            #{if user?.id}
-                <div id="options">
-                    Connected as ${user.mail}
-                    |
-                    
+            <h1>Friends Boutique</h1>
+            #{if session?.user}
+            
+             <div id="options">
+                   
                     <a href="@{Login.logout()}">Logout</a>
-                </div>
-            #{/if}
+               </div>
+          	#{/if}
+              
         </div>
         
         <div id="content">
@@ -41,7 +41,8 @@
         </div>
         
         <div id="footer">
-            Created with <a href="http://www.playframework.org">play framework</a> and really inspirated from the booking sample application provided by <a href="http://seamframework.org/">seam framework</a>
+           <br>
+            Links to Privacy, About us, etc
         </div>
         
     </body>

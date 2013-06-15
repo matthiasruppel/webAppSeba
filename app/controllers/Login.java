@@ -1,8 +1,12 @@
 package controllers;
 
+import org.hibernate.loader.custom.Return;
+
 import models.User;
 import play.data.validation.Valid;
 import play.mvc.*;
+import play.mvc.Http.Cookie;
+import play.mvc.results.Result;
 
 public class Login extends Controller {
 	
@@ -52,24 +56,29 @@ public class Login extends Controller {
 	        
 	    }
 	    
+
 	    public static void login(String mail, String password) {
 	    	
-	    	// 
 	    	
-	        User user = User.find("byMailAndPassword",mail, password).first();
+	    	User user = User.find("byMailAndPassword",mail, password).first();
 	        if(user != null) {
 	            session.put("user", user.mail);
+	            response.setCookie("FriendsBoutiqueCookie", mail, "30d");
 	            flash.success("Welcome, " + user.firstName);
-	            
+
 	            
 	        Account.index();         
-	            
+	         
 	        }
+	    	
 	        // Oops
 	        flash.put("mail", mail);
 	        flash.error("Login failed");
 	        index();
 	    }
+	    
+	    	
+	    
 	    
 	    public static void logout() {
 	        session.clear();
