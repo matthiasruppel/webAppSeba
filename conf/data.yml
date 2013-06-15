@@ -1,0 +1,9 @@
+# Users
+    
+models.User(demo):
+    mail: demo
+    password: demo
+    firstName: Demo 
+    lastName: Demo
+
+ 
