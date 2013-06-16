@@ -1,0 +1,36 @@
+.center {
+	text-align: center;
+}
+
+#page {
+	margin: 0 auto;
+	width: 940px;
+}
+
+#header {
+	padding-top: 10px;
+	border-top: 30px solid #CCC;
+}
+
+#header-first-row {
+	
+}
+
+#header-second-row {
+	padding-top: 10px;
+	border-top: 1px solid #999;
+}
+
+#navigation {
+	line-height: 58px;
+}
+
+#login {
+	line-height: 45px;
+}
+
+#content {
+	margin-top: 10px;
+	padding-top: 5px;
+	border-top: 1px solid #666;
+}
