@@ -123,7 +123,7 @@ public class Login extends Controller {
 	            render("@settings", connected, verifyPassword);
 	        }
 	        connected.save();
-	        flash.success("Password updated");
+	        flash.success("Password was updated");
 	        Account.index();
 	    }
 	    
