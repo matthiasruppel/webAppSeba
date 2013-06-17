@@ -4,8 +4,9 @@
 		<title>FriendsBoutique :: home</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")" />
-		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")" />
+		<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}" />
+		<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}" />
+                <script src="@{'/public/javascripts/sessvars.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	</head>
 	<body>
 		<div id="page">
@@ -13,7 +14,7 @@
 			<div id="header" class="span12">
 				<div class="row" id="header-first-row">
 					<div class="span4">
-						<a href="#"><img src="assets/images/logo.png" /></a>
+						<a href="#"><img src="@{'/public/images/logo.png'}" /></a>
 					</div>
 					<div class="span4">
 						<ul id="navigation" class="inline">
@@ -22,11 +23,11 @@
 						</ul>
 					</div>
 					<div class="span4" id="login">
-						<form class="form-inline">
-							<input type="text" class="input-small" placeholder="Email">
-							<input type="password" class="input-small" placeholder="Password">
+                                                #{form @login(), id:'formLogin', class:'form-inline'}
+							<input type="text" name="mail" class="input-small" placeholder="Email">
+							<input type="password" name="password" class="input-small" placeholder="Password">
 							<button type="submit" class="btn">Sign in</button>
-						</form>
+						#{/form}
 					</div>
 				</div>
 				<div id="header-second-row">
