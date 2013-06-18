@@ -20,11 +20,12 @@
 			#{list items:items, as:'item'}
 				<tr>
 					<td>${item.title} </td>
-					<td><img src="${item.shop}"class="img-polaroid">
-					<td><a href="@{Account.delete(item.id)}" class="btn btn-danger btn-mini"><i class="icon-white icon-remove"></i></a></td>
-					
+					<td><img src="${item.shop}"class="img-rounded" width:100px height:auto>
+					<td><a href="@{Account.delete(item.id)}" class="btn btn-danger btn-mini">delete</a></td>
 				</tr>
-			#{/list}
+				
+				
+				#{/list}
 		</tbody>
 	</table>
 

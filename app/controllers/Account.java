@@ -14,6 +14,13 @@ public class Account extends Controller {
 	
 
     public static void index() {
+    		
+    		if(Login.connected() == null){
+    				
+	            flash.success("Please sign-in first.");
+    			Login.index();
+    		}
+    	
     		String currentUser = session.get("user");
 	    	List<Item>items = Item.findAll();
 	    	List<User> users = User.findAll();

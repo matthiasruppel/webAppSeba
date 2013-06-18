@@ -75,8 +75,6 @@ public class Login extends Controller {
             List<User> users = User.findAll();
             if (users.contains(user)) {
                 session.put("user", mail);
-               
-                
                 flash.success("Welcome back, " + user.firstName);
                 Account.index();
                 return true;
