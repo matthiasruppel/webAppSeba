@@ -43,7 +43,11 @@ public class Account extends Controller {
     }
     
    
-    
+    public static void delete(long itemId) {
+    	Item item = Item.findById(itemId);
+    	item.delete();
+    	index();
+    }
    
     
 
