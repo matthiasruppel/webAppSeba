@@ -5,7 +5,6 @@ import play.data.validation.*;
 import javax.persistence.*;
 
 @Entity
-//@Table(name="Customer")
 public class User extends Model {
     
 	@Required

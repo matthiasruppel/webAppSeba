@@ -11,10 +11,14 @@ public class Account extends Controller {
 
     public static void index() {
 	    	List<User> users = User.findAll();
-
-        render(users);
+	    	//List<Items> items = Items.findAll();
+	    	String currentUser = session.get("user");
+        render(users, currentUser);
     }
-
+    
+   
+    
+   
     
 
 }

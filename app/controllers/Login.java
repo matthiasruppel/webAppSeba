@@ -13,6 +13,9 @@ import play.mvc.results.Result;
 public class Login extends Controller {
 
     static User user;
+    static String currentUser(){
+    	return user.firstName;
+    }
 
     @Before
     static void addUser() {
@@ -72,7 +75,9 @@ public class Login extends Controller {
             List<User> users = User.findAll();
             if (users.contains(user)) {
                 session.put("user", mail);
-                flash.success("Welcome, " + user.firstName);
+               
+                
+                flash.success("Welcome back, " + user.firstName);
                 Account.index();
                 return true;
             } else {
@@ -88,9 +93,9 @@ public class Login extends Controller {
         User user = User.find("byMailAndPassword", mail, password).first();
         if (user != null) {
             session.put("user", user.mail);
+            session.put("firstName", user.firstName);
             response.setCookie("FriendsBoutiqueCookie", mail, "30d");
             flash.success("Welcome, " + user.firstName);
-
 
             Account.index();
 
