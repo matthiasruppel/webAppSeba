@@ -11,5 +11,17 @@ models.User(demo2):
  password: demo2
  firstName: Franz
  lastName: Meier
+ 
+models.Item(item1):
+ articleNr: 123456789
+ title: Winterjacke
+ subtitle: mit Daunen
+ description: weich
+ category: Man
+ brand: Esprit
+ shop: http://www.weare.de/ext/blog/bench-5.jpg
+ price: 120
+ userlist: demo@mytum.de
+ 
 
 

@@ -1,32 +1,14 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<h1>Account of ${currentUser}</h1>
+<h1>Account of ${viewUser}</h1>
 
 
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span9">
       <!--Sidebar content-->
-            
-      <table class="table table-hover">
-		<thead>
-			<tr>
-				<th>My items</th>
-				
-			</tr>
-		</thead>
-		<tbody>
-			#{list items:items, as:'item'}
-				<tr>
-					<td>${item.title} </td>
-					<td><img src="${item.shop}"class="img-polaroid">
-					
-					
-				</tr>
-			#{/list}
-		</tbody>
-	</table>
+      My Items....
 
       
     </div>
