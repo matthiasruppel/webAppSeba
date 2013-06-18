@@ -39,7 +39,7 @@
 					#{if (session.user == null)}					
 					<div class="span4" id="login">
                                                 #{form @Login.login(), id:'formLogin', class:'form-inline'}
-							<input type="text" name="mail" class="input-small" placeholder="Email">
+							<input type="text" name="mail" class="input-small" placeholder="E-Mail">
 							<input type="password" name="password" class="input-small" placeholder="Password">
 							<button type="submit" class="btn">Sign in</button>
 						#{/form}
@@ -79,10 +79,10 @@
 				<div id="footer" class="span12">
 					<ul id="footer" class="inline">
 						<hr>
-						<li>About us</li>
-						<li>Imprint</li>
-						<li>Sitemap</li>
-						<li>Privacy Notice</li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Imprint</a></li>
+						<li><a href="#">Sitemap</a></li>
+						<li><a href="#">Privacy Notice</a></li>
 					</ul>
 				</div>
 			</div>

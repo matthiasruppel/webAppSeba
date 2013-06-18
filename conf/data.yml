@@ -1,9 +1,15 @@
 # Users
     
 models.User(demo):
-    mail: demo@mytum.de
-    password: demo
-    firstName: Simon
-    lastName: Ecker
+ mail: demo@mytum.de
+ password: demo
+ firstName: Simon
+ lastName: Ecker
+ 
+models.User(demo2):
+ mail: demo2@mytum.de
+ password: demo2
+ firstName: Franz
+ lastName: Meier
 
 
