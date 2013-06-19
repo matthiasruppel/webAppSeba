@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                                       Login.register
+GET     /                                       Account.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

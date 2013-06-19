@@ -38,4 +38,20 @@ public class Application extends Controller {
     	System.out.println(userlist);
     	Account.index();
     }
+	
+	public static void about(){
+		render();
+		
+	}
+	public static void disclaimer(){
+		render();
+		
+	}
+	
+	public static void privacy(){
+		render();
+		
+	}
+	
 }
+
