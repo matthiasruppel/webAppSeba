@@ -2,6 +2,7 @@ package models;
 
 import play.db.jpa.*;
 import play.data.validation.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -27,17 +28,21 @@ public class User extends Model {
     @MinSize(5)
     public String password;
     
+	@Required
+	public String avatar;
+    
     
    
-    public User(String firstName, String lastName, String password, String mail) {
+    public User(String firstName, String lastName, String password, String mail, String avatar) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.mail = mail;
+        this.avatar = avatar;
     }
 
     public String toString()  {
-        return "User(" + firstName +" "+ lastName + ")";
+        return "User : " + firstName +" "+ lastName;
     }
     
 }

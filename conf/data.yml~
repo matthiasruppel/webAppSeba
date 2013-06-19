@@ -5,14 +5,14 @@ models.User(demo):
  password: demo
  firstName: Simon
  lastName: Ecker
- avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
+ avatar: http://1.2.3.10/bmi/gamona-images.de/221707/20f987bcd2eb688ead6712649ee7c56a.jpg
  
 models.User(demo2):
  mail: demo2@mytum.de
  password: demo2
  firstName: Franz
  lastName: Meier
- avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
+ avatar: http://1.2.3.13/bmi/gamona-images.de/221704/e91bf87b40390c9122fc477dc97be805.jpg
  
 models.Item(item1):
  articleNr: 123456789

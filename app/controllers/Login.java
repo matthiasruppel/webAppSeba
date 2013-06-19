@@ -108,7 +108,7 @@ public class Login extends Controller {
     public static void logout() {
         session.clear();
         response.removeCookie("FriendsBoutiqueCookie");
-        Login.register();
+        index();
     }
 
     public static void settings() {

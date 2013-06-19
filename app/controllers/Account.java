@@ -18,12 +18,22 @@ public class Account extends Controller {
     		if(Login.connected() == null){
     				
 	            flash.success("Please sign-in first.");
-    			Login.register();
+    			Login.index();
     		}
     	
     		String currentUser = session.get("user");
 	    	List<Item>items = Item.findAll();
 	    	List<User> users = User.findAll();
+	    	//System.out.println(""+currentUser);
+	    	User theUser =null;
+	    	for(int i = 0; i < users.size(); i++){
+		   // 	System.out.println(users.get(i));
+		    	if(users.get(i).mail.equals(currentUser)){
+		    		 theUser=users.get(i);
+		    	 }
+		    }
+	    	
+    		//System.out.println("the user: "+theUser);
 	    	for(int i = 0; i < users.size(); i++){
 	    	 if(users.get(i).mail.equals(currentUser)){
 	    		 users.remove(i);
@@ -46,7 +56,7 @@ public class Account extends Controller {
 	    	}
 	    
 	    	
-        render(users, currentUser, items);
+        render(users, currentUser, items, theUser);
     }
     
    

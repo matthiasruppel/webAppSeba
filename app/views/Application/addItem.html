@@ -1,0 +1,43 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div class="container">
+	<div class="page-header">
+		<h1>Add Item</h1>
+	</div>
+
+		#{form @Application.addItem()}
+			<span>
+				<label for="articleNr">article number:</label>
+				<input type="number" name="articleNr" id="articleNr" value="" />
+			</span>
+			<span>
+				<label for="title">title:</label>
+				<input type="text" name="title" id="title" value="" />
+			</span>
+			<span>
+				<label for="subtitle">subtitle:</label>
+				<input type="text" name="subtitle" id="subtitle" value="" />
+			</span>
+			<span>
+				<label for="category">category:</label>
+				<input type="text" name="category" id="category" value="" />
+			</span>
+			<span>
+				<label for="brand">brand:</label>
+				<input type="text" name="brand" id="brand" value="" />
+			</span>
+			<span>
+				<label for="shop">shop:</label>
+				<input type="text" name="shop" id="shop" value="" />
+			</span>
+			<span>
+				<label for="price">price:</label>
+				<input type="number" name="price" id="price" value="" />
+			</span>
+
+			<span>
+				<input type="submit" id="additem" value="Add Item" />
+			</span>
+		#{/form}
+</div>
