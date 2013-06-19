@@ -3,11 +3,7 @@
 # ~~~~
 
 # Home page
-<<<<<<< HEAD
 GET     /                                       Login.index
-=======
-GET     /                                       Account.index
->>>>>>> c3c20c7371dc3b01408e467bb9d23b3529991fc7
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
