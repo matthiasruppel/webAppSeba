@@ -1,96 +1,95 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-     <table class="table table-hover" width="100">
-		<tr>
-				<td>${theUser}</td>
-				<td></td>
-		</tr>
-		<tr >					
-			<td>
-				<a href="@{Login.settings()}" >
-					<img src=${theUser.avatar} height="100" width="100">
-				</a>
-			</td>
-			<td align="right"> 
-				<table class="table table-hover" width="100">
-						<tr> Create Board</tr>
-						<tr>
-							<a href="@{NotImplemented.index()}" >
-								<img src="http://pinterest.gripsell.com/img/add_board_icon.png" height="100" width="100">
-							</a>
-						</tr>
-				</table>
-			</td>
-			<td>
-				<table class="table table-hover" width="100">
-						<tr> Add Item</tr>
-						<tr>
-							<a href="@{Application.addItem()}" >
-								<img src="http://icons.iconarchive.com/icons/dryicons/simplistica/128/add-icon.png" height="100" width="100">
-							</a>
-						</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
+<table class="table table-hover" width="100">
+    <tr>
+        <td>${theUser}</td>
+        <td></td>
+    </tr>
+    <tr >					
+        <td>
+            <a href="@{Login.settings()}" >
+                <img src="${theUser.avatar}" height="100" width="100" alt="Settings">
+            </a>
+        </td>
+        <td align="right"> 
+            <table class="table table-hover" width="100">
+                <tr> Create Board</tr>
+                <tr>
+                <a href="@{NotImplemented.index()}" >
+                    <img src="http://pinterest.gripsell.com/img/add_board_icon.png" height="100" width="100">
+                </a>
+    </tr>
+</table>
+</td>
+<td>
+    <table class="table table-hover" width="100">
+        <tr> Add Item</tr>
+        <tr>
+        <a href="@{Application.addItem()}" >
+            <img src="http://icons.iconarchive.com/icons/dryicons/simplistica/128/add-icon.png" height="100" width="100">
+        </a>
+    </tr>
+</table>
+</td>
+</tr>
+</table>
 
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span9">
-      <!--Sidebar content-->
-            
-      <table class="table table-hover">
-		<thead>
-			<tr>
-				<th>My items</th>
-				
-			</tr>
-		</thead>
-		<tbody>
-			#{list items:items, as:'item'}
-				<tr>
-					<td>${item.title} </td>
-					<td><img src="${item.shop}"class="img-rounded" width:100px height:auto>
-					<td><a href="@{Account.delete(item.id)}" class="btn btn-danger btn-mini">delete</a></td>
-				</tr>
-				
-				#{/list}
-		</tbody>
-	</table>
+    <div class="row-fluid">
+        <div class="span9">
+            <!--Sidebar content-->
 
-      
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>My items</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    #{list items:items, as:'item'}
+                    <tr>
+                        <td>${item.title} </td>
+                        <td><img src="${item.shop}"class="img-rounded" width:100px height:auto>
+                        <td><a href="@{Account.delete(item.id)}" class="btn btn-danger btn-mini">delete</a></td>
+                    </tr>
+                    #{/list}
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="span3">
+            <!--Sidebar content-->
+
+
+            <table class="table table-hover">
+                <thead>
+
+                    <tr>
+                        <th>Other users </th>
+                    </tr
+                </thead>
+
+
+                <tbody>
+                    #{list items:users, as:'user'}
+                    <tr>
+                        <td>
+                            <img src=${user.avatar} height="20" width="20">
+                        </td>
+                        <td>
+                            <a href="@{NotImplemented.index()}" >
+                                ${user.firstName} ${user.lastName}
+                            </a>
+                        </td>
+                    </tr>
+                    #{/list}
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="span3">
-      <!--Sidebar content-->
-      
-      
-<table class="table table-hover">
-		<thead>
-
-			<tr>
-				<th>Other users </th>
-			</tr
-		</thead>
-
-		
-		<tbody>
-			#{list items:users, as:'user'}
-				<tr>
-					<td>
-						<img src=${user.avatar} height="20" width="20">
-					</td>
-					<td>
-						<a href="@{NotImplemented.index()}" >
-							${user.firstName} ${user.lastName}
-						</a>
-					</td>
-				</tr>
-			#{/list}
-		</tbody>
-	</table>
-    </div>
-  </div>
 </div>
 
 

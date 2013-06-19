@@ -63,7 +63,7 @@
 	
 	// icon
 	icon = d.createElement("img");
-	icon.src = "assets/images/heart_icon.png";
+	icon.src = "http://localhost:9000/public/images/heart_icon.png";
 	
 	// iframediv
 	iframediv = d.createElement("div");
@@ -81,6 +81,9 @@
 		productDescription = encodeURI(getMeta("name", "fb-product-description", "content")),
 		productPrice = encodeURI(getMeta("name", "fb-product-price", "content")),
 		productName = encodeURI(getMeta("name", "fb-product-name", "content")),
+                productSubName = encodeURI(getMeta("name", "fb-product-subname", "content")),
+                productBrand = encodeURI(getMeta("name", "fb-product-brand", "content")),
+                productArtNr = encodeURI(getMeta("name", "fb-product-artNr", "content")),
 		productURL = window.location;
 		
 	// link click event handling
@@ -98,11 +101,11 @@
 		
 		// iframe not created yet
 		if(typeof iframe == "undefined") {
-			var link = "login.html?pi=" + productImage + "&" + "pd=" + productDescription + "&" + "pp=" + productPrice + "&pn=" + productName + "&pu=" + productURL
+			var link = "http://localhost:9000/request/add?pi=" + productImage + "&" + "pd=" + productDescription + "&" + "pp=" + productPrice + "&pn=" + productName + "&psn=" + productSubName + "&pb=" + productBrand + "&pu=" + productURL + "&partnr=" + productArtNr;
 			iframe = d.createElement("iframe");
 			iframe.frameBorder = 0;
 			iframe.width = "300px";
-			iframe.height = "180px";
+			iframe.height = "200px";
 			iframe.id = "fb-iframe";
 			iframe.setAttribute("src", link);
 			

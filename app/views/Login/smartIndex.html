@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FriendsBoutique :: Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}" />
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}" />
+    </head>
+    <body>
+        <div>
+
+            <img src="@{'/public/images/logo.png'}" />
+            <br>
+            Sorry, but you are not logged in. Login first.
+            #{if flash.error}
+            <strong>${flash.error}</strong>
+            #{/if}
+            <div id="login">
+                #{form @Login.smartLogin(), id:'formLogin', class:'form-inline'}
+                <input type="email" name="mail" class="input-small" placeholder="Email">
+                <input type="password" name="password" class="input-small" placeholder="Password">
+                <button type="submit" class="btn">login</button>
+
+                <br />
+                <a href="@{Login.index()}" target="_blank">Register</a>
+                #{/form}
+            </div>
+
+        </div>
+    </body>
+</html>

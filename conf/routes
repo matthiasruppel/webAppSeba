@@ -3,13 +3,16 @@
 # ~~~~
 
 # Home page
-GET     /                                       Login.register
+GET     /                                       Login.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
+
+# Requests from shops
+GET     /request/add?pi={pi}&pd={pd}&pp={pp}&pn={pn}&psn={psn}&pb={pb}&pu={pu}&partnr={partnr}    Request.add
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

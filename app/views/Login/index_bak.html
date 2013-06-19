@@ -1,0 +1,47 @@
+#{extends 'main.html' /}
+
+#{set title:'Home' /}
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span6">
+            <!--Login-->
+            <div id="login">
+
+                demo@mytum.de, pw: demo
+
+                #{form @Login.login(), id:'formLogin'}
+
+                <p class="field">
+
+                    <input type="text" name="mail" size="19" value="${flash.mail}"placeholder="E-Mail" />
+                </p>
+                <p class="field">
+
+                    <input type="password" name="password" size="19" placeholder="Password" />
+                </p>    
+                <p class="buttons">
+                    <input type="submit" value="login" />
+                </p> 
+                #{/form}
+
+                <p>
+                    <a href="@{register()}">Register New User</a>
+                </p>
+
+            </div>      
+
+
+        </div>
+        <div class="span6">
+            <!--Sidebar content-->
+
+            Friends Boutique Beschreibung, Use case, What to do, Why should you login/register,etc....
+
+        </div>
+
+
+        <script type="text/javascript" charset="${_response_encoding}">
+            sessvars.$.clearMem()
+        </script>

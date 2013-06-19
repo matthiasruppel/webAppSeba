@@ -37,27 +37,27 @@ public class Login extends Controller {
     }
 
     public static void index() {
-        if (connected() != null) {
-
-            index();
-
+        if(loggedIn()){
+            Account.index();
         }
-
-        if (loggedIn()) {
-        }
-
+        
         render();
     }
 
-    public static void register() {
+    /**
+     * This method is used to show login box in iframe
+     * 
+     * @author Walter Kulisch
+     */
+    public static void smartIndex() {
         render();
     }
-
+    
     public static void saveUser(@Valid User user, String verifyPassword) {
         validation.required(verifyPassword);
         validation.equals(verifyPassword, user.password).message("Your password doesn't match");
         if (validation.hasErrors()) {
-            render("@register", user, verifyPassword);
+            render("@index", user, verifyPassword);
         }
         user.create();
         session.put("user", user.mail);
@@ -65,7 +65,6 @@ public class Login extends Controller {
         flash.success("Welcome, " + user.firstName);
 
         Account.index();
-
     }
 
     public static boolean loggedIn() {
@@ -76,18 +75,16 @@ public class Login extends Controller {
             if (users.contains(user)) {
                 session.put("user", mail);
                 flash.success("Welcome back, " + user.firstName);
-                Account.index();
                 return true;
             } else {
                 return false;
             }
         }
+        
         return false;
     }
 
     public static void login(String mail, String password) {
-
-
         User user = User.find("byMailAndPassword", mail, password).first();
         if (user != null) {
             session.put("user", user.mail);
@@ -96,13 +93,37 @@ public class Login extends Controller {
             flash.success("Welcome, " + user.firstName);
 
             Account.index();
-
         }
 
         // Oops
         flash.put("mail", mail);
         flash.error("Login failed");
         index();
+    }
+    
+    /**
+     * This login method is used to validate smart logins
+     * 
+     * @author Walter Kulisch
+     * @param mail
+     * @param password 
+     */
+    public static void smartLogin(String mail, String password) {
+        User user = User.find("byMailAndPassword", mail, password).first();
+        if (user != null) {
+            session.put("user", user.mail);
+            session.put("firstName", user.firstName);
+            response.setCookie("FriendsBoutiqueCookie", mail, "30d");
+        } else {
+            flash.error("Login failed");
+            smartIndex();
+        }
+
+        // Oops
+        flash.put("mail", mail);
+        flash.error("Login failed");
+        
+        Request.addItem();
     }
 
     public static void logout() {

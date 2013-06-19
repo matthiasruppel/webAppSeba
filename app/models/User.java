@@ -7,32 +7,25 @@ import javax.persistence.*;
 
 @Entity
 public class User extends Model {
-    
-	@Required
+
+    @Required
     @MaxSize(100)
     @MinSize(4)
     public String mail;
-	
     @Required
     @MaxSize(50)
     @MinSize(2)
     public String firstName;
-    
     @Required
     @MaxSize(50)
     @MinSize(2)
     public String lastName;
-    
     @Required
     @MaxSize(20)
     @MinSize(5)
     public String password;
-    
-	@Required
-	public String avatar;
-    
-    
-   
+    public String avatar;
+
     public User(String firstName, String lastName, String password, String mail, String avatar) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,8 +34,7 @@ public class User extends Model {
         this.avatar = avatar;
     }
 
-    public String toString()  {
-        return "User : " + firstName +" "+ lastName;
+    public String toString() {
+        return "User : " + firstName + " " + lastName;
     }
-    
 }

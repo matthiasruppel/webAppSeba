@@ -1,47 +1,91 @@
 #{extends 'main.html' /}
-
-#{set title:'Home' /}
-
+#{set title:'Register' /}
 
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span6">
-      <!--Login-->
-		<div id="login">
-    	
-    	demo@mytum.de, pw: demo
+    <div class="row-fluid">
+        <div class="span6">
+            <h3>Sign up now..</h3>
+            <h4>Get instant access to Friends Boutique for free.</h4>
+            <!--Register-->
+            <p>		     
+            <div id="register">
 
-    #{form @Login.login(), id:'formLogin'}
-    	
-        <p class="field">
-            
-            <input type="text" name="mail" size="19" value="${flash.mail}"placeholder="E-Mail" />
-        </p>
-        <p class="field">
-            
-            <input type="password" name="password" size="19" placeholder="Password" />
-        </p>    
-        <p class="buttons">
-            <input type="submit" value="Account login" />
-        </p> 
-    #{/form}
+                #{form @saveUser()}
+                #{field 'user.mail'}
+                <p class="${field.errorClass}">
+                    <input type="text" name="${field.name}" size="16" value="${user?.mail}" placeholder="E-Mail" required="required"> *
+                    <span class="error">${field.error}</span>
+                </p>
+                #{/field}
+                #{field 'user.firstName'}
+                <p class="${field.errorClass}">
+                    <input type="text" name="${field.name}" size="16" value="${user?.firstName}"placeholder="First name" required="required"> *
+                    <span class="error">${field.error}</span>
+                </p>
+                #{/field}
 
-    <p>
-        <a href="@{register()}">Register New User</a>
-    </p>
+                #{field 'user.lastName'}
+                <p class="${field.errorClass}">
+                    <input type="text" name="${field.name}" size="16" value="${user?.lastName}" placeholder="Last name" required="required"> *
+                    <span class="error">${field.error}</span>
+                </p>
+                #{/field}
 
-		</div>      
 
-      
+                #{field 'user.password'}
+                <p class="${field.errorClass}">
+                    <input type="password" name="${field.name}" size="16" value="${user?.password}" placeholder="Password" required="required"> *
+                    <span class="error">${field.error}</span>
+                </p>
+                #{/field}
+                #{field 'verifyPassword'}
+                <p class="${field.errorClass}">
+                    <input type="password" name="${field.name}" size="16" value="${verifyPassword}" placeholder="Re-enter password" required="required"> *
+                    <span class="error">${field.error}</span>
+                </p>
+                #{/field}    
+                <p class="buttons">
+                    <input type="submit" value="register">
+                </p>
+                #{/form}
+
+            </div>
+
+        </div>
+        <div class="span6">
+            <h3>.. or login</h3>
+            <h4>Manage your account.</h4>
+            <!--Sidebar content-->
+
+            <!--Friends Boutique Beschreibung, Use case, What to do, Why should you login/register,etc....-->
+            <div id="login">
+
+                demo@mytum.de, pw: demo
+
+                #{form @Login.login(), id:'formLogin'}
+
+                <p class="field">
+                    <input type="email" name="mail" size="19" value="${flash.mail}" placeholder="E-Mail" autocomplete="off" />
+                </p>
+                <p class="field">
+
+                    <input type="password" name="password" size="19" placeholder="Password" />
+                </p>    
+                <p class="buttons">
+                    <input type="submit" value="login" />
+                </p> 
+                #{/form}
+
+            </div>
+
+        </div>
     </div>
-    <div class="span6">
-      <!--Sidebar content-->
-      
-      Friends Boutique Beschreibung, Use case, What to do, Why should you login/register,etc....
-      
-	</div>
-
+</div>
 
 <script type="text/javascript" charset="${_response_encoding}">
     sessvars.$.clearMem()
 </script>
+
+
+
+

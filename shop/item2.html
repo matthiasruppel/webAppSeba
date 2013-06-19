@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RANDOM SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="fb-product-name" content="Armee-Jacke">
+        <meta name="fb-product-subname" content="gebraucht">
+        <meta name="fb-product-image" content="http://www.pierros.de/images/Kostueme_Flower_Power_Show_Hose_Hippie_blau_Kind.jpg">
+        <meta name="fb-product-description" content="Hol dir die trendige blaue Schlaghose aus den 70ern ...">
+        <meta name="fb-product-price" content="149.00">
+        <meta name="fb-product-brand" content="Esprit">
+        <meta name="fb-product-artNr" content="123457689">
+
+    </head>
+    <body>
+
+        <a href="shop.html"><< zurück</a>
+        <br>
+        
+        <h1>Item 2</h1>
+        <div style="border: 1px solid #999;">
+            <img src="http://www.pierros.de/images/Kostueme_Flower_Power_Show_Hose_Hippie_blau_Kind.jpg" height="300" style="float: left; margin-right: 50px;" />
+            <b>Hippie-hose</b>
+            <br>
+            blau
+            <br>
+            <br>
+            <p>
+                Hol dir die trendige blaue Schlaghose aus den 70ern ...
+            </p>
+            <br>
+            <br>
+            für nur <strong>149 Euro</strong>
+            <br>
+            <br>
+            <div id="fb-root"></div>
+            <script>
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id))
+                        return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.async = true;
+                    js.src = "http://localhost:9000/public/javascripts/friendsBoutique.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'friendsBoutique-js'));
+            </script>
+            <br style="clear: both;" />
+        </div>
+
+    </body>
+</html>

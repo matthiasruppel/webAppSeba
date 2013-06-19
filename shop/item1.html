@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RANDOM SHOP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="fb-product-name" content="Armee-Jacke">
+        <meta name="fb-product-subname" content="gebraucht">
+        <meta name="fb-product-image" content="http://www.your-army-shop.com/images/bw-m65jacke-09.jpg">
+        <meta name="fb-product-description" content="Diese altmodische Armee-Jacke, die bereits im Vietnam-Krieg getragen wurde ...">
+        <meta name="fb-product-price" content="49.00">
+        <meta name="fb-product-brand" content="USMC">
+        <meta name="fb-product-artNr" content="123456789">
+
+    </head>
+    <body>
+
+        <a href="shop.html"><< zurück</a>
+        <br>
+        
+        <h1>Item 1</h1>
+        <div style="border: 1px solid #999;">
+            <img src="http://www.your-army-shop.com/images/bw-m65jacke-09.jpg" height="300" style="float: left; margin-right: 50px;" />
+            <b>Armee-Jacke</b>
+            <br>
+            Gebraucht
+            <br>
+            <br>
+            <p>
+                Diese altmodische Armee-Jacke, die bereits im Vietnam-Krieg getragen wurde ...
+            </p>
+            <br>
+            <br>
+            für nur <strong>49 Euro</strong>
+            <br>
+            <br>
+            <div id="fb-root"></div>
+            <script>
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id))
+                        return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.async = true;
+                    js.src = "http://localhost:9000/public/javascripts/friendsBoutique.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'friendsBoutique-js'));
+            </script>
+            <br style="clear: both;" />
+        </div>
+
+    </body>
+</html>
