@@ -13,5 +13,8 @@ public class Application extends Controller {
     	List<User> users = User.findAll();
         render(users);
     }
-
+    
+    public static void about() {
+    render();
+    }
 }

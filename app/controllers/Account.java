@@ -18,7 +18,7 @@ public class Account extends Controller {
     		if(Login.connected() == null){
     				
 	            flash.success("Please sign-in first.");
-    			Login.index();
+    			Login.register();
     		}
     	
     		String currentUser = session.get("user");
