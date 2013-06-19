@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
     <head>
         <title>FriendsBoutique :: home</title>
         <meta charset="utf-8">
@@ -89,100 +88,4 @@
         </div>
 
     </body>
-=======
-	<head>
-		<title>FriendsBoutique :: home</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}" />
-		<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}" />
-        <script src="@{'/public/javascripts/sessvars.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-               
-	</head>
-	<body>
-		<div id="page">
-			<div class="span12">
-						<a href="@{Account.index()}"><img src="@{'/public/images/fb-2.jpg'}" /></a>
-			
-				<div class="row" id="header-first-row">
-					<div class="span4">
-						<a href="@{Account.index()}"><img src="@{'/public/images/logo.png'}" /></a>
-					</div>
-					<div class="span4">
-						<ul id="navigation" class="inline">
-							<li><a href="#">Women</a></li>
-							<li><a href="#">Men</a></li>
-						</ul>
-					</div>
-					
-					
-					#{if session?.user}
-             		
-               		<div class="span4">
-						<ul id="options" class="inline">
-							<li><a href="@{Login.settings()}">Settings</a></li>
-							<li><a href="@{Login.logout()}">Logout</a></li>
-						</ul>
-					</div>
-               		
-          			#{/if}
-					
-					#{if (session.user == null)}					
-					<div class="span4" id="login">
-                                                #{form @Login.login(), id:'formLogin', class:'form-inline'}
-							<input type="text" name="mail" class="input-small" placeholder="E-Mail">
-							<input type="password" name="password" class="input-small" placeholder="Password">
-							<button type="submit" class="btn">Sign in</button>
-						#{/form}
-					</div>
-					#{/if}		
-					
-					  
-					
-				</div>
-				<div id="header-second-row">
-					<ul id="breadcrumb" class="inline">
-						<li>Home</li>
-					</ul>
-				</div>
-			
-				
-			</div>
-			
-		
-			
-			<div id="content" class="span12">
-            #{if flash.error}
-                <div class="alert alert-error">
-                <strong>${flash.error}</strong>  
-				</div>
-               
-            #{/if}
-            #{if flash.success}
-                <div class="alert alert-success">
-				 <strong>${flash.success}</strong>
-				</div>
-               
-            #{/if}
-            
-            #{doLayout /}
-        	</div>
-			
-			
-				<div id="footer" class="span12">
-					<ul id="footer" class="inline">
-						<hr>
-						<li><a href="@{Account.index()}">Home</a></li>
-						<li><a href="@{Application.about()}">About us</a></li>
-						<li><a href="@{Application.disclaimer()}">Disclaimer</a></li>
-						<li><a href="@{Application.privacy()}">Privacy Notice</a></li>
-						<li><a href="#">Sitemap</a></li>
-					</ul>
-				</div>
-			</div>
-			</div>
-		
-		</div>
-	</body>
->>>>>>> c3c20c7371dc3b01408e467bb9d23b3529991fc7
 </html>
