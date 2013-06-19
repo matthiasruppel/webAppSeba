@@ -57,4 +57,20 @@ public class Application extends Controller {
         Item item = new Item(articleNr, title, subtitle, category, brand, shop, price, theUser.mail);
         item.create();
     }
+	
+	public static void about(){
+		render();
+		
+	}
+	public static void disclaimer(){
+		render();
+		
+	}
+	
+	public static void privacy(){
+		render();
+		
+	}
+	
 }
+
