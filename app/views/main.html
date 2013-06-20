@@ -62,14 +62,14 @@
 
             <div id="content" class="span12">
                 #{if flash.error}
-                <p class="fError">
-                    <strong>${flash.error}</strong>
-                </p>
+                <div class="alert alert-success">
+               
+                    ${flash.error}
                 #{/if}
                 #{if flash.success}
-                <p class="fSuccess">
-                    <strong>${flash.success}</strong>
-                </p>
+                <div class="alert alert-success">
+                    ${flash.success}
+                </div>
                 #{/if}
 
                 #{doLayout /}
