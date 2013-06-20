@@ -19,7 +19,9 @@ public class Account extends Controller {
 
         String currentUser = session.get("user");
         List<Item> items = Item.findAll();
+        List<Item> userItem = new ArrayList();
         List<User> users = User.findAll();
+        int j = 0;
         //System.out.println(""+currentUser);
         User theUser = null;
         for (int i = 0; i < users.size(); i++) {
@@ -38,9 +40,11 @@ public class Account extends Controller {
 
 
         for (int i = 0; i < items.size(); i++) {
-            if (!items.get(i).userlist.equals(currentUser)) {
-                items.remove(i);
+            if (items.get(i).userlist.equals(currentUser)) {
+            userItem.add(j, items.get(i));
+            j++;
             }
+            
         }
 
         if (users.isEmpty()) {
@@ -52,7 +56,7 @@ public class Account extends Controller {
         }
 
 
-        render(users, currentUser, items, theUser);
+        render(users, currentUser, items, theUser, userItem);
     }
 
     public static void delete(long itemId) {
