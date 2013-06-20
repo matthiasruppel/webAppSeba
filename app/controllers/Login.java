@@ -124,6 +124,7 @@ public class Login extends Controller {
         flash.error("Login failed");
         
         Request.addItem();
+        Request.success();
     }
 
     public static void logout() {

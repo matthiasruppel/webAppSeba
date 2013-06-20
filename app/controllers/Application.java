@@ -18,11 +18,11 @@ public class Application extends Controller {
 //    	flash.success("Please sign-in first.");
 //    	render("NotImplemented/index.html");
     }
-    
-    public static void addItemView(){
-    	renderTemplate("Application/addItem.html");
+
+    public static void addItemView() {
+        renderTemplate("Application/addItem.html");
     }
-    	
+
     public static void addItem(long articleNr, String title, String subtitle, String category,
             String brand, String shop, double price, String userlist) {
         //render("@addItem", articleNr, title, subtitle, category, brand, shop, price);
@@ -45,7 +45,7 @@ public class Application extends Controller {
     public static void addItemBusiness(long articleNr, String title, String subtitle, String category,
             String brand, String shop, double price) {
 
-        render("@addItem", articleNr, title, subtitle, category, brand, shop, price);
+        //render("@addItem", articleNr, title, subtitle, category, brand, shop, price);
         String currentUser = session.get("user");
         List<Item> items = Item.findAll();
         List<User> users = User.findAll();
@@ -57,37 +57,37 @@ public class Application extends Controller {
                 theUser = users.get(i);
             }
         }
-        Item item = new Item(articleNr, title, subtitle, category, brand, shop, price, theUser.mail);
-        item.create();
+        new Item(articleNr, title, subtitle, category, brand, shop, price, currentUser);
+        Request.success();
     }
-	
-	public static void about(){
-		render();
-		
-	}
-	public static void disclaimer(){
-		render();
-		
-	}
-	
-	public static void privacy(){
-		render();
-		
-	}
-	
-	public static void show(String cat){
-		List<Item> items = Item.findAll();
-		List<Item> itemsCat = new ArrayList();
-		int j=0;
-		for (int i = 0; i < items.size(); i++) {
-	         if (items.get(i).category.equals(cat)) {
-	            itemsCat.add(j, items.get(i));
-	            j++;
-	            }
-		
-		
-	}
-		render(itemsCat, cat);
-	}
-}
 
+    public static void about() {
+        render();
+
+    }
+
+    public static void disclaimer() {
+        render();
+
+    }
+
+    public static void privacy() {
+        render();
+
+    }
+
+    public static void show(String cat) {
+        List<Item> items = Item.findAll();
+        List<Item> itemsCat = new ArrayList();
+        int j = 0;
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).category.equals(cat)) {
+                itemsCat.add(j, items.get(i));
+                j++;
+            }
+
+
+        }
+        render(itemsCat, cat);
+    }
+}

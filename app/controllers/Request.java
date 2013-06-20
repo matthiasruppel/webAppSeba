@@ -38,18 +38,18 @@ public class Request extends Controller {
         Request.pu = pu;
         Request.partnr = Long.parseLong(partnr);
         
-        System.out.println(Request.pi + Request.pd + Request.pp + Request.pn + Request.pu + Request.psn + Request.pb + Request.partnr);
+        //System.out.println(Request.pi + Request.pd + Request.pp + Request.pn + Request.pu + Request.psn + Request.pb + Request.partnr);
         
-        if(Login.loggedIn()) {
-            success();
+        if(Login.loggedIn()) {            
+            addItem();
         }
         
         Login.smartIndex();
     }
     
     public static void addItem() {
-        Application.addItemBusiness(Request.partnr, Request.pn, Request.psn, "Man", Request.pb, Request.pi, Request.pp);
-        success();
+        //System.out.println(Request.pi + Request.pd + Request.pp + Request.pn + Request.pu + Request.psn + Request.pb + Request.partnr);
+        Application.addItemBusiness(Request.partnr, Request.pn, Request.psn, "Men", Request.pb, Request.pi, Request.pp);
     }
     
     public static void success() {
