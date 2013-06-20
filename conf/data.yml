@@ -57,3 +57,13 @@ models.Item(item2):
  price: 80
  userlist: demo@mytum.de
 
+models.Item(item3):
+ articleNr: 23456782291
+ title: Jeans2
+ subtitle: Stonewash
+ description: 
+ category: Men
+ brand: Levis
+ shop: http://levi.imageg.net/graphics/product_images/pLEVI1-12789246t241x292.jpg
+ price: 80
+ userlist: demo2@mytum.de
