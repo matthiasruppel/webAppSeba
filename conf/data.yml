@@ -9,9 +9,30 @@ models.User(demo):
  
 models.User(demo2):
  mail: demo2@mytum.de
- password: demo2
- firstName: Franz
- lastName: Meier
+ password: demo
+ firstName: Walter
+ lastName: Kulisch
+ avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
+
+models.User(demo3):
+ mail: demo4@mytum.de
+ password: demo
+ firstName: Matthias
+ lastName: Ruppel
+ avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
+
+models.User(demo4):
+ mail: demo4@mytum.de
+ password: demo
+ firstName: Güven
+ lastName: Candogan
+ avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
+ 
+models.User(demo5):
+ mail: demo5@mytum.de
+ password: demo
+ firstName: Maria
+ lastName: Paskuda
  avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
  
 models.Item(item1):
