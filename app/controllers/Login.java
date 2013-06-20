@@ -74,7 +74,7 @@ public class Login extends Controller {
             List<User> users = User.findAll();
             if (users.contains(user)) {
                 session.put("user", mail);
-                flash.success("Welcome back, " + user.firstName);
+                if (connected() == null) flash.success("Welcome back, " + user.firstName);
                 return true;
             } else {
                 return false;

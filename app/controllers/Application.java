@@ -75,5 +75,19 @@ public class Application extends Controller {
 		
 	}
 	
+	public static void show(String cat){
+		List<Item> items = Item.findAll();
+		List<Item> itemsCat = new ArrayList();
+		int j=0;
+		for (int i = 0; i < items.size(); i++) {
+	         if (items.get(i).category.equals(cat)) {
+	            itemsCat.add(j, items.get(i));
+	            j++;
+	            }
+		
+		
+	}
+		render(itemsCat, cat);
+	}
 }
 

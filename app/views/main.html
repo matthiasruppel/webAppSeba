@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}" />
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}" />
+		<link rel="stylesheet" href="assets/css/bootstrap-responsive.css" >
         <script src="@{'/public/javascripts/sessvars.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
     </head>
@@ -19,8 +20,8 @@
                     </div>
                     <div class="span4">
                         <ul id="navigation" class="inline">
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Men</a></li>
+                            <li><a href="@{Application.show("Women")}">Women</a></li>
+                            <li><a href="@{Application.show("Men")}">Men</a></li>
                         </ul>
                     </div>
 
@@ -79,6 +80,7 @@
             <div id="footer" class="span12">
                 <hr>
                 <ul id="footer" class="inline">
+                 	<li><a href="@{Account.index()}">Home</a></li>
                     <li><a href="@{Application.about()}">About us</a></li>
                     <li><a href="@{Application.disclaimer()}">Disclaimer</a></li>
                     <li><a href="#">Sitemap</a></li>

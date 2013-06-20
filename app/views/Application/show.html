@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Show' /}
+
+<table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Items of category "${cat}"</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    #{list items:itemsCat, as:'item'}
+                   
+                    <tr>
+                        <td>${item.title} </td>
+                        <td><img src="${item.shop}"class="img-rounded" >
+                   
+                        <tr>
+                        	<td></td>
+                        	
+                        	<td></td>
+                        </tr>
+                    </tr>
+                    #{/list}
+                </tbody>
+            </table>
+
+

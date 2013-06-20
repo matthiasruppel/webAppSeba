@@ -19,7 +19,7 @@ models.Item(item1):
  title: Winterjacke
  subtitle: mit Daunen
  description: weich
- category: Man
+ category: Men
  brand: Esprit
  shop: http://www.weare.de/ext/blog/bench-5.jpg
  price: 120
@@ -30,7 +30,7 @@ models.Item(item2):
  title: Jeans
  subtitle: Stonewash
  description: 
- category: Man
+ category: Men
  brand: Levis
  shop: http://levi.imageg.net/graphics/product_images/pLEVI1-12789246t241x292.jpg
  price: 80

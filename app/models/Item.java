@@ -22,7 +22,7 @@ public class Item extends Model {
 	public String description;
 	
 	@Required
-	public String Category;
+	public String category;
 	
 	@Required
 	public String brand;
@@ -41,7 +41,7 @@ public class Item extends Model {
 		this.articleNr = articleNr;
 		this.title = title;
 		this.subtitle = subtitle;
-		Category = category;
+		this.category = category;
 		this.brand = brand;
 		this.shop = shop;
 		this.price = price;
