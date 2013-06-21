@@ -10,6 +10,9 @@ public class Bootstrap extends Job {
         if(User.count() == 0) {
         	Fixtures.loadModels("data.yml");
         }
+        if(Picture.count() == 0){
+        	new Picture();
+        }
     }
     
 }

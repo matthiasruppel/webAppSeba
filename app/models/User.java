@@ -25,6 +25,7 @@ public class User extends Model {
     @MinSize(5)
     public String password;
     public String avatar;
+  
 
     public User(String firstName, String lastName, String password, String mail, String avatar) {
         this.firstName = firstName;

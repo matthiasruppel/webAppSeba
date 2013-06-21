@@ -16,7 +16,8 @@ public class Account extends Controller {
             flash.success("Please sign-in first.");
             Login.index();
         }
-
+       
+        
         String currentUser = session.get("user");
         List<Item> items = Item.findAll();
         List<Item> userItem = new ArrayList();
@@ -46,6 +47,24 @@ public class Account extends Controller {
             }
             
         }
+        
+        j = 0;
+        List<Picture>pictures = Picture.findAll();
+        List<Picture> picture_user = new ArrayList();
+         
+         	for(int i = 0; i < pictures.size(); i++){
+            	if (pictures.get(i).user == (theUser.mail)){
+            			if (pictures.get(i).use.equals("avatar")){
+        	        		picture_user.add(j, pictures.get(i));
+        	        		j++;
+           			}
+           	}
+           }
+            
+        
+        	
+        	
+        
 
         if (users.isEmpty()) {
             flash.success("Sorry, no other users");
@@ -56,7 +75,7 @@ public class Account extends Controller {
         }
 
 
-        render(users, currentUser, items, theUser, userItem);
+        render(users, currentUser, items, theUser, userItem, picture_user);
     }
 
     public static void delete(long itemId) {
@@ -64,4 +83,31 @@ public class Account extends Controller {
         item.delete();
         index();
     }
+    
+   
+    
+    public static void uploadPicture(Picture picture) {
+        picture.save();
+      
+        List<User>users = User.findAll();
+        for(int i = 0; i < users.size(); i++){
+        	if(users.get(i).mail.equals(session.get("user"))){
+        		users.get(i).avatar = "http://localhost:9000/account/getpicture?id="+picture.id.toString();
+        		picture.user = session.get("user");
+        		picture.use = "avatar";
+        		picture.save();
+        		users.get(i).save();
+        	}
+        }
+        
+        Account.index();
+    }
+    
+    public static void getPicture(long id) {
+        Picture picture = Picture.findById(id);
+        response.setContentTypeIfNotSet(picture.image.type());
+        renderBinary(picture.image.get());
+        System.out.println("get Picture");
+    }
+    
 }

@@ -13,10 +13,11 @@
         <td></td>
     </tr>
     <tr >					
-        <td>
-            <a href="@{Login.settings()}" >
-                <img src="${theUser.avatar}" height="100" width="100" alt="Settings">
-            </a>
+        <td>   
+            <!--<a href="@{Login.settings()}" >
+                <img src=${theUser.avatar} height="100" width="100" alt="Settings">
+            </a>-->
+           <img src="${theUser.avatar}" height="150" width="150" alt="Settings">
         </td>
         <td align="right"> 
             <table class="table table-hover" width="100">
@@ -56,7 +57,7 @@
                 </thead>
                 <tbody>
                     #{list items:userItem, as:'item'}
-                   
+                   	
                     <tr>
                         <td>${item.title} </td>
                         <td><img src="${item.shop}" width="150" class="img-rounded" >

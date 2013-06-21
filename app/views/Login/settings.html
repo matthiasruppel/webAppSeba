@@ -7,22 +7,38 @@
 		<li class="active">Settings</li>
 		</ul>
 	<div>
-<h2>Change your password</h2>
 
-#{form @saveSettings()}
-    #{field 'connected.password'}
-        <p class="${field.errorClass}">
-            <label>Password:</label> <input type="password" name="password" size="16" value="${connected?.password}"> *
-            <span class="error">${field.error}</span>
-        </p>
-    #{/field}
-    #{field 'verifyPassword'}
-        <p class="${field.errorClass}">
-            <label>Verify password:</label> <input type="password" name="${field.name}" size="16" value="${verifyPassword}"> *
-            <span class="error">${field.error}</span>
-        </p>
-    #{/field}
-    <button type="submit" class="btn">Change</button>
-   <a href="@{Account.index()}">Cancel</a>    
-    
-#{/form}
+<div class="span12">
+	<div class = "row">
+	<div class = "span6">	
+			<h4> Change your password.</h4>
+			#{form @saveSettings()}
+			    #{field 'connected.password'}
+			        <p class="${field.errorClass}">
+			            <label>Password:</label> <input type="password" name="password" size="16" value="${connected?.password}"> *
+			            <span class="error">${field.error}</span>
+			        </p>
+			    #{/field}
+			    #{field 'verifyPassword'}
+			        <p class="${field.errorClass}">
+			            <label>Verify password:</label> <input type="password" name="${field.name}" size="16" value="${verifyPassword}"> *
+			            <span class="error">${field.error}</span>
+			        </p>
+			    #{/field}
+			    <button type="submit" class="btn">Change</button>
+			   <a href="@{Account.index()}">Cancel</a>    
+			    
+			#{/form}
+	</div>
+	<div class="span6">
+	<h4>Change your Avatar. </h4>
+			
+		 
+		#{form @Account.uploadPicture(), enctype:'multipart/form-data'}
+		 
+		    <input type="file" name="picture.image" />
+		    <input type="submit" name="submit" value="Save" />
+		#{/form}	
+		
+	</div>
+</div>
