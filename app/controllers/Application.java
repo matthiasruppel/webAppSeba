@@ -24,8 +24,7 @@ public class Application extends Controller {
     }
 
     public static void addItem(long articleNr, String title, String subtitle, String category,
-            String brand, String shop, double price, String userlist) {
-        //render("@addItem", articleNr, title, subtitle, category, brand, shop, price);
+        String brand, String shop, double price, String userlist) {
         String currentUser = session.get("user");
         List<Item> items = Item.findAll();
         List<User> users = User.findAll();

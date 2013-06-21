@@ -15,7 +15,7 @@ models.User(demo2):
  avatar: http://www.colourbox.com/preview/2578170-616024-graphic-illustration-of-man-in-business-suit-as-user-icon-avatar.jpg
 
 models.User(demo3):
- mail: demo4@mytum.de
+ mail: demo3@mytum.de
  password: demo
  firstName: Matthias
  lastName: Ruppel
@@ -64,6 +64,6 @@ models.Item(item3):
  description: 
  category: Men
  brand: Levis
- shop: http://levi.imageg.net/graphics/product_images/pLEVI1-12789246t241x292.jpg
+ shop: http://images.otto.de/asset/mmo/formatz/TIMEZONE-denim-Hose-New-Eduardo-3244-blues-wash-blues-wash-4423073.jpg
  price: 80
  userlist: demo2@mytum.de
