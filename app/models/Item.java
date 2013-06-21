@@ -46,7 +46,7 @@ public class Item extends Model {
 		this.shop = shop;
 		this.price = price;
 		this.userlist = userlist;
-		create();
+		
 		
 	}
 	
