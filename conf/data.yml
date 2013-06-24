@@ -44,7 +44,9 @@ models.Item(item1):
  shop: http://www.weare.de/ext/blog/bench-5.jpg
  price: 120
  userlist: demo@mytum.de
- 
+ heartList: 
+ - leer 
+
 models.Item(item2):
  articleNr: 234567891
  title: Jeans
@@ -55,6 +57,8 @@ models.Item(item2):
  shop: http://levi.imageg.net/graphics/product_images/pLEVI1-12789246t241x292.jpg
  price: 80
  userlist: demo@mytum.de
+ heartList: 
+ - leer
 
 models.Item(item3):
  articleNr: 23456782291
@@ -66,3 +70,5 @@ models.Item(item3):
  shop: http://images.otto.de/asset/mmo/formatz/TIMEZONE-denim-Hose-New-Eduardo-3244-blues-wash-blues-wash-4423073.jpg
  price: 80
  userlist: demo2@mytum.de
+ heartList: 
+ - leer

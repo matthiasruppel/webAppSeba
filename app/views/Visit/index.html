@@ -19,7 +19,9 @@
                    
                     <tr>
                         <td>${item.title} </td>
-                        <td><img src="${item.shop}" width="200" class="img-rounded" >
+                        <td><img src="${item.shop}" width="200" class="img-rounded">
+                        <td>${item.rating}
+                        <td><a href="@{Visit.heart(item)}"><img src="@{'/public/images/heart_icon.png'}" />
                         <tr>
                         	<td></td>
                         	<td></td>

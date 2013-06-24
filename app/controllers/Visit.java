@@ -1,9 +1,14 @@
 package controllers;
 
 import play.*;
+import play.db.jpa.JPA;
 import play.mvc.*;
 
 import java.util.*;
+
+import javax.management.Query;
+
+import org.hibernate.ejb.EntityManagerImpl;
 
 import com.sun.xml.internal.ws.developer.UsesJAXBContext;
 
@@ -68,4 +73,27 @@ public class Visit extends Controller {
     
 
     }
+        
+    public static void heart(Item item){
+    	ArrayList<String> users = item.heartList;
+    		for(int i = 0; i < users.size(); i++){
+        		if (users.get(i).equals(session.get("user"))){
+        			flash.error("You already hearted this item.");
+        		}
+        		else{
+        			
+        			item.rating = item.rating + 1;
+        	    	item.heartList.add(item.heartList.size(), session.get("user"));
+        	    	flash.success("Item was hearted");
+        	    	item.save();
+        	    	index(item.userlist);
+        			
+        			
+        		}
+    		
+    	}
+    	
+    		
+    }
+        
 }

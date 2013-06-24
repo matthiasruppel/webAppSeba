@@ -34,6 +34,10 @@ public class Item extends Model {
 	
 	
     public String userlist;
+    
+    public int rating;
+    
+    public ArrayList<String> heartList;
 	
 	public Item(long articleNr, String title, String subtitle, String category,
 			String brand, String shop, double price, String userlist) {
@@ -46,6 +50,7 @@ public class Item extends Model {
 		this.shop = shop;
 		this.price = price;
 		this.userlist = userlist;
+		this.heartList = new ArrayList();
 		
 		
 	}
